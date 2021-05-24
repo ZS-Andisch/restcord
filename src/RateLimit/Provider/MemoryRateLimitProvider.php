@@ -83,7 +83,7 @@ class MemoryRateLimitProvider extends AbstractRateLimitProvider
             return 0;
         }
 
-        return ($this->routes[$route]['reset'] - time()) * 1000000;
+        return ($this->routes[$route]['reset'] - time()) * 2000000;
     }
 
     /**

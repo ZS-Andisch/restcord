@@ -136,7 +136,7 @@ class RedisRateLimitProvider extends AbstractRateLimitProvider
             return 0;
         }
 
-        return ($this->redis->get($key) - time()) * 1000000;
+        return ($this->redis->get($key) - time()) * 2000000;
     }
 
     /**
