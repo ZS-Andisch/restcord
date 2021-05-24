@@ -14,7 +14,6 @@
 namespace RestCord\Logging;
 
 use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
 
 /**
  * @author Aaron Scherer <aequasi@gmail.com>
@@ -45,9 +44,9 @@ class MessageFormatter extends \GuzzleHttp\MessageFormatter
      */
     public function format(
         RequestInterface $request,
-        ?ResponseInterface $response = null,
-        ?\Throwable $error = null
-    ): string {
+        $response = null,
+        $error = null
+    ) {
         $template = parent::format($request, $response, $error);
 
         return str_replace($this->token, '<TOKEN>', $template);
