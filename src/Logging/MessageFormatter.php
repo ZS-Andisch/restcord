@@ -44,8 +44,8 @@ class MessageFormatter extends \GuzzleHttp\MessageFormatter
      */
     public function format(
         RequestInterface $request,
-        $response = null,
-        $error = null
+        ResponseInterface $response = null,
+        \Exception $error = null
     ) {
         $template = parent::format($request, $response, $error);
 
